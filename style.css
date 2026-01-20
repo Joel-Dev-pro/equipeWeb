@@ -1177,6 +1177,7 @@ ul {
 }
 
 /* Mobile large */
+/* Mobile large */
 @media (max-width: 768px) {
     .nav-menu {
         position: fixed;
@@ -1187,4 +1188,265 @@ ul {
         backdrop-filter: blur(10px);
         width: 100%;
         text-align: center;
-        transition: 0.4s cubic-bezier(0.4, 0,
+        transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        padding: 30px 0;
+        z-index: 999;
+        border-top: 1px solid rgba(0, 0, 0, 0.05);
+    }
+    
+    .nav-menu.active {
+        right: 0;
+    }
+    
+    .nav-menu li {
+        margin: 12px 0;
+    }
+    
+    .btn-nav {
+        margin: 15px 0 0 0;
+    }
+    
+    .menu-toggle {
+        display: block;
+    }
+    
+    /* Désactiver les animations sur mobile */
+    .hero:before,
+    .hero:after,
+    .image-placeholder:before,
+    .image-placeholder:after,
+    .image-placeholder i,
+    .about-image .image-placeholder i {
+        animation: none !important;
+    }
+    
+    .service-card:hover,
+    .benefit:hover,
+    .stat:hover,
+    .contact-item:hover {
+        transform: none !important;
+    }
+    
+    .hero {
+        padding: 150px 0 80px;
+    }
+    
+    .hero-title {
+        font-size: 2.4rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.1rem;
+    }
+    
+    .section-title {
+        font-size: 2.2rem;
+    }
+    
+    .section-subtitle {
+        font-size: 1.05rem;
+    }
+    
+    .services, .why-us, .about, .contact {
+        padding: 80px 0;
+    }
+    
+    .footer-content {
+        flex-direction: column;
+        gap: 40px;
+        text-align: center;
+    }
+    
+    .footer-links h3:after, .footer-contact h3:after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    
+    .social-links {
+        justify-content: center;
+    }
+    
+    .contact-form-container {
+        padding: 35px 25px;
+    }
+    
+    .benefit-icon, .service-icon {
+        width: 70px;
+        height: 70px;
+    }
+    
+    .benefit-icon i, .service-icon i {
+        font-size: 1.8rem;
+    }
+    
+    .service-card, .benefit {
+        padding: 30px 20px;
+    }
+}
+
+/* Mobile petit */
+@media (max-width: 576px) {
+    .container {
+        padding: 0 15px;
+    }
+    
+    .hero-title {
+        font-size: 2rem;
+        line-height: 1.3;
+    }
+    
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+    
+    .hero-buttons {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .btn-large {
+        padding: 14px 30px;
+        font-size: 1rem;
+        width: 100%;
+    }
+    
+    .section-title {
+        font-size: 1.9rem;
+    }
+    
+    .section-subtitle {
+        font-size: 1rem;
+        margin-bottom: 2.5rem;
+    }
+    
+    .services-grid, .benefits-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+    
+    .service-card, .benefit {
+        padding: 30px 20px;
+    }
+    
+    .stat {
+        min-width: 100%;
+    }
+    
+    .stat-number {
+        font-size: 2.3rem;
+    }
+    
+    .image-placeholder {
+        height: 280px;
+    }
+    
+    .image-placeholder i {
+        font-size: 4rem;
+    }
+    
+    .image-placeholder i:nth-child(1) {
+        font-size: 2.8rem;
+        top: 30px;
+        left: 30px;
+    }
+    
+    .image-placeholder i:nth-child(2) {
+        font-size: 2.3rem;
+        bottom: 30px;
+        right: 30px;
+    }
+    
+    .about-image .image-placeholder {
+        height: 320px;
+    }
+    
+    .about-image .image-placeholder i:nth-child(1) {
+        font-size: 3rem;
+        top: 40px;
+        right: 40px;
+    }
+    
+    .about-image .image-placeholder i:nth-child(2) {
+        font-size: 2.5rem;
+        bottom: 70px;
+        left: 40px;
+    }
+    
+    .about-image .image-placeholder i:nth-child(3) {
+        font-size: 2.2rem;
+        bottom: 40px;
+        right: 70px;
+    }
+    
+    .contact-info, .contact-form-container {
+        min-width: 100%;
+    }
+    
+    .contact-form-container {
+        padding: 25px 20px;
+    }
+}
+
+/* Focus styles pour accessibilité */
+:focus {
+    outline: 3px solid var(--primary-color);
+    outline-offset: 3px;
+}
+
+:focus:not(:focus-visible) {
+    outline: none;
+}
+
+/* Animation de chargement des sections */
+section {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Pour les animations réduites */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* Améliorations d'accessibilité */
+@media (hover: hover) {
+    .btn:hover, .nav-link:hover, .service-card:hover, 
+    .benefit:hover, .stat:hover, .contact-item:hover,
+    .social-links a:hover {
+        transform: translateY(-3px);
+    }
+}
+
+/* Correction pour le menu hamburger */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.8rem;
+    color: var(--dark-color);
+    cursor: pointer;
+    padding: 5px;
+    transition: var(--transition);
+    z-index: 1001;
+}
+
+.menu-toggle:hover {
+    color: var(--primary-color);
+}
+
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+    
+    .navbar {
+        position: relative;
+    }
+}
