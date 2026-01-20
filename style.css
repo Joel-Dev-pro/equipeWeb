@@ -6,13 +6,13 @@
 }
 
 :root {
-    /* Couleurs raffinées - Version plus subtile */
-    --primary-color: #2c7aa9; /* Bleu plus foncé et professionnel */
-    --primary-light: #e8f4fc; /* Bleu très clair pour les fonds */
-    --secondary-color: #6da04c; /* Vert plus foncé et sérieux */
-    --secondary-light: #f0f7eb; /* Vert très clair pour les fonds */
-    --accent-color: #4a9ccc; /* Bleu accent plus doux */
-    --accent-light: #f5fafd; /* Bleu accent très clair */
+    /* Couleurs raffinées */
+    --primary-color: #2c7aa9;
+    --primary-light: #e8f4fc;
+    --secondary-color: #6da04c;
+    --secondary-light: #f0f7eb;
+    --accent-color: #4a9ccc;
+    --accent-light: #f5fafd;
     --dark-color: #2c3e50;
     --dark-light: #3a516e;
     --light-color: #f8f9fa;
@@ -41,7 +41,7 @@ body {
     overflow-x: hidden;
 }
 
-/* Animation d'entrée générale */
+/* Animations */
 @keyframes fadeInUp {
     from {
         opacity: 0;
@@ -58,36 +58,9 @@ body {
     to { opacity: 1; }
 }
 
-@keyframes slideInLeft {
-    from {
-        opacity: 0;
-        transform: translateX(-40px);
-    }
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
-
-@keyframes slideInRight {
-    from {
-        opacity: 0;
-        transform: translateX(40px);
-    }
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
-
 @keyframes float {
     0%, 100% { transform: translateY(0); }
     50% { transform: translateY(-10px); }
-}
-
-@keyframes pulse {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.8; }
 }
 
 @keyframes gradientShift {
@@ -96,20 +69,10 @@ body {
     100% { background-position: 0% 50%; }
 }
 
-@keyframes spin {
-    to { transform: rotate(360deg); }
-}
-
 @keyframes pulseCTA {
-    0% {
-        box-shadow: 0 0 0 0 rgba(44, 122, 169, 0.7);
-    }
-    70% {
-        box-shadow: 0 0 0 15px rgba(44, 122, 169, 0);
-    }
-    100% {
-        box-shadow: 0 0 0 0 rgba(44, 122, 169, 0);
-    }
+    0% { box-shadow: 0 0 0 0 rgba(44, 122, 169, 0.7); }
+    70% { box-shadow: 0 0 0 15px rgba(44, 122, 169, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(44, 122, 169, 0); }
 }
 
 @keyframes shimmer {
@@ -117,11 +80,7 @@ body {
     100% { transform: translateX(100%); }
 }
 
-/* Application de l'animation d'entrée */
-.hero-content, .section-header, .about-text, .contact-info {
-    animation: fadeInUp 1s ease-out;
-}
-
+/* Typographie */
 h1, h2, h3, h4 {
     font-family: 'Montserrat', sans-serif;
     font-weight: 600;
@@ -143,6 +102,7 @@ ul {
     list-style: none;
 }
 
+/* Layout */
 .container {
     width: 100%;
     max-width: var(--container-width);
@@ -150,6 +110,7 @@ ul {
     padding: 0 20px;
 }
 
+/* Composants */
 .btn {
     display: inline-block;
     padding: 14px 32px;
@@ -221,10 +182,10 @@ ul {
     width: 100%;
 }
 
-.btn-nav {
-    padding: 10px 24px;
-    margin-left: 15px;
-    border-radius: 8px;
+/* Section styles */
+.section-header {
+    margin-bottom: 5rem;
+    position: relative;
 }
 
 .section-title {
@@ -262,11 +223,6 @@ ul {
     line-height: 1.6;
 }
 
-.section-header {
-    margin-bottom: 5rem;
-    position: relative;
-}
-
 .text-highlight {
     background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
     -webkit-background-clip: text;
@@ -275,7 +231,7 @@ ul {
     font-weight: 700;
 }
 
-/* Scroll progress bar */
+/* Header & Navigation */
 .scroll-progress {
     position: fixed;
     top: 0;
@@ -287,7 +243,6 @@ ul {
     transition: width 0.2s ease;
 }
 
-/* Header élégant avec animation */
 .header {
     position: fixed;
     top: 0;
@@ -313,40 +268,20 @@ ul {
     align-items: center;
 }
 
-/* Styles pour le logo image */
+/* Logo amélioré */
 .logo-img {
-    height: 40px; /* Ajustez selon votre logo */
+    height: 50px; /* Augmenté pour meilleure visibilité */
     width: auto;
     transition: var(--transition);
+    object-fit: contain;
 }
 
 .logo-img:hover {
     transform: scale(1.05);
 }
 
-/* Optionnel : si vous voulez garder le texte en fallback */
 .logo h1 {
-    display: none; /* Cache le texte si vous avez une image */
-}
-
-/* Responsive pour mobile */
-@media (max-width: 768px) {
-    .logo-img {
-        height: 35px;
-    }
-}
-
-@media (max-width: 576px) {
-    .logo-img {
-        height: 30px;
-    }
-}
-
-.logo-highlight {
-    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
+    display: none;
 }
 
 .nav-menu {
@@ -386,13 +321,20 @@ ul {
     color: var(--primary-color);
 }
 
+.btn-nav {
+    padding: 10px 24px;
+    margin-left: 15px;
+    border-radius: 8px;
+}
+
 .menu-toggle {
     display: none;
     background: none;
     border: none;
-    font-size: 1.5rem;
+    font-size: 1.8rem; /* Augmenté pour meilleure visibilité */
     color: var(--dark-color);
     cursor: pointer;
+    padding: 5px;
     transition: var(--transition);
 }
 
@@ -400,7 +342,7 @@ ul {
     color: var(--primary-color);
 }
 
-/* Section Hero magnifique */
+/* Hero Section */
 .hero {
     padding: 180px 0 120px;
     background: linear-gradient(135deg, var(--primary-light) 0%, var(--accent-light) 100%);
@@ -408,25 +350,26 @@ ul {
     overflow: hidden;
 }
 
-.hero:before {
+.hero:before, .hero:after {
     content: '';
     position: absolute;
-    width: 300px;
-    height: 300px;
     background: radial-gradient(circle, rgba(44, 122, 169, 0.1) 0%, transparent 70%);
-    top: 10%;
-    left: 10%;
     animation: float 6s ease-in-out infinite;
 }
 
+.hero:before {
+    width: 300px;
+    height: 300px;
+    top: 10%;
+    left: 10%;
+}
+
 .hero:after {
-    content: '';
-    position: absolute;
     width: 200px;
     height: 200px;
-    background: radial-gradient(circle, rgba(109, 160, 76, 0.08) 0%, transparent 70%);
     bottom: 10%;
     right: 10%;
+    background: radial-gradient(circle, rgba(109, 160, 76, 0.08) 0%, transparent 70%);
     animation: float 8s ease-in-out infinite reverse;
 }
 
@@ -485,6 +428,7 @@ ul {
     justify-content: center;
 }
 
+/* Image placeholder réutilisable */
 .image-placeholder {
     width: 100%;
     max-width: 520px;
@@ -515,10 +459,7 @@ ul {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(90deg, 
-        transparent, 
-        rgba(255, 255, 255, 0.1), 
-        transparent);
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
     animation: shimmer 2s infinite;
 }
 
@@ -545,7 +486,7 @@ ul {
     animation: float 4s ease-in-out infinite reverse;
 }
 
-/* Section Services avec cartes animées */
+/* Services Section */
 .services {
     padding: 120px 0;
     background-color: var(--white);
@@ -568,7 +509,8 @@ ul {
     gap: 35px;
 }
 
-.service-card {
+/* Card styles réutilisés */
+.service-card, .benefit {
     background-color: var(--white);
     border-radius: var(--border-radius);
     padding: 40px 30px;
@@ -582,33 +524,51 @@ ul {
     transform: translateY(30px);
 }
 
-.service-card.visible {
+.service-card.visible, .benefit.visible {
     opacity: 1;
     transform: translateY(0);
 }
 
-.service-card:before {
+.service-card:hover, .benefit:hover {
+    transform: translateY(-12px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+    border-color: transparent;
+}
+
+/* Bordure animée commune */
+.service-card:before, .benefit:before {
     content: '';
     position: absolute;
+    background: var(--border-gradient);
+    transition: 0.6s ease;
+}
+
+.service-card:before {
     top: 0;
     left: 0;
     width: 4px;
     height: 0;
-    background: var(--border-gradient);
-    transition: height 0.6s ease;
 }
 
 .service-card:hover:before {
     height: 100%;
 }
 
-.service-card:hover {
-    transform: translateY(-12px);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
-    border-color: transparent;
+.benefit:before {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    transform: scaleX(0);
+    transform-origin: left;
 }
 
-.service-icon {
+.benefit:hover:before {
+    transform: scaleX(1);
+}
+
+/* Icon styles réutilisés */
+.service-icon, .benefit-icon {
     width: 80px;
     height: 80px;
     background: linear-gradient(135deg, var(--primary-light), var(--accent-light));
@@ -622,23 +582,40 @@ ul {
     z-index: 2;
 }
 
-.service-card:hover .service-icon {
-    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
-    transform: scale(1.1) rotate(5deg);
+.benefit-icon {
+    width: 70px;
+    height: 70px;
 }
 
-.service-icon i {
+.service-card:hover .service-icon, .benefit:hover .benefit-icon {
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    transform: scale(1.1);
+}
+
+.benefit:hover .benefit-icon {
+    transform: scale(1.1) rotateY(180deg);
+}
+
+.service-icon i, .benefit-icon i {
     font-size: 2.2rem;
     color: var(--primary-color);
     transition: var(--transition);
 }
 
-.service-card:hover .service-icon i {
+.benefit-icon i {
+    font-size: 1.9rem;
+}
+
+.service-card:hover .service-icon i, .benefit:hover .benefit-icon i {
     color: var(--white);
     transform: scale(1.1);
 }
 
-.service-title {
+.benefit:hover .benefit-icon i {
+    transform: scale(1.1) rotateY(-180deg);
+}
+
+.service-title, .benefit-title {
     font-size: 1.5rem;
     margin-bottom: 18px;
     color: var(--dark-color);
@@ -646,15 +623,26 @@ ul {
     z-index: 2;
 }
 
-.service-description {
+.benefit-title {
+    font-size: 1.4rem;
+}
+
+.service-description, .benefit-description {
     color: var(--text-light);
-    font-size: 1rem;
     line-height: 1.7;
     position: relative;
     z-index: 2;
 }
 
-/* Section Pourquoi nous avec effets visuels */
+.service-description {
+    font-size: 1rem;
+}
+
+.benefit-description {
+    font-size: 0.98rem;
+}
+
+/* Why Us Section */
 .why-us {
     padding: 120px 0;
     background: linear-gradient(135deg, var(--light-color) 0%, #f0f5fa 100%);
@@ -681,88 +669,18 @@ ul {
 }
 
 .benefit {
-    background-color: var(--white);
-    border-radius: var(--border-radius);
-    padding: 40px 30px;
-    box-shadow: var(--shadow-light);
-    transition: var(--transition);
-    text-align: center;
-    position: relative;
-    overflow: hidden;
-    border: 1px solid rgba(0, 0, 0, 0.05);
-    opacity: 0;
     transform: translateY(30px) scale(0.95);
 }
 
 .benefit.visible {
-    opacity: 1;
     transform: translateY(0) scale(1);
-}
-
-.benefit:before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 4px;
-    background: var(--border-gradient);
-    transform: scaleX(0);
-    transform-origin: left;
-    transition: transform 0.6s ease;
-}
-
-.benefit:hover:before {
-    transform: scaleX(1);
 }
 
 .benefit:hover {
     transform: translateY(-10px) scale(1.02);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
 }
 
-.benefit-icon {
-    width: 70px;
-    height: 70px;
-    background: linear-gradient(135deg, var(--primary-light), var(--accent-light));
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto 25px;
-    transition: var(--transition);
-    position: relative;
-}
-
-.benefit:hover .benefit-icon {
-    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
-    transform: rotateY(180deg);
-}
-
-.benefit-icon i {
-    font-size: 1.9rem;
-    color: var(--primary-color);
-    transition: var(--transition);
-}
-
-.benefit:hover .benefit-icon i {
-    color: var(--white);
-    transform: rotateY(-180deg);
-}
-
-.benefit-title {
-    font-size: 1.4rem;
-    margin-bottom: 18px;
-    color: var(--dark-color);
-}
-
-.benefit-description {
-    color: var(--text-light);
-    font-size: 0.98rem;
-    line-height: 1.7;
-}
-
-/* Section À propos avec design élégant */
+/* About Section */
 .about {
     padding: 120px 0;
     background-color: var(--white);
@@ -857,7 +775,6 @@ ul {
 }
 
 .about-image .image-placeholder i:nth-child(1) {
-    position: absolute;
     top: 60px;
     right: 60px;
     font-size: 4.5rem;
@@ -865,7 +782,6 @@ ul {
 }
 
 .about-image .image-placeholder i:nth-child(2) {
-    position: absolute;
     bottom: 100px;
     left: 60px;
     font-size: 4rem;
@@ -873,14 +789,13 @@ ul {
 }
 
 .about-image .image-placeholder i:nth-child(3) {
-    position: absolute;
     bottom: 60px;
     right: 100px;
     font-size: 3.5rem;
     animation: float 4s ease-in-out infinite;
 }
 
-/* Section Contact avec design premium */
+/* Contact Section */
 .contact {
     padding: 120px 0;
     background: linear-gradient(135deg, var(--light-color) 0%, #eef3f7 100%);
@@ -1036,6 +951,10 @@ ul {
     margin-left: 10px;
 }
 
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
 .hidden {
     display: none !important;
 }
@@ -1073,7 +992,7 @@ ul {
     line-height: 1.5;
 }
 
-/* Footer avec design élégant */
+/* Footer */
 .footer {
     background: linear-gradient(135deg, var(--dark-color) 0%, var(--dark-light) 100%);
     color: var(--white);
@@ -1205,13 +1124,16 @@ ul {
     border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-/* Responsive Design */
+/* ============ RESPONSIVE DESIGN ============ */
+
+/* Tablette large */
 @media (max-width: 1200px) {
     .container {
         max-width: 95%;
     }
 }
 
+/* Tablette */
 @media (max-width: 992px) {
     .hero .container {
         flex-direction: column;
@@ -1248,8 +1170,13 @@ ul {
     .contact-content {
         gap: 50px;
     }
+    
+    .logo-img {
+        height: 45px;
+    }
 }
 
+/* Mobile large */
 @media (max-width: 768px) {
     .nav-menu {
         position: fixed;
@@ -1260,217 +1187,4 @@ ul {
         backdrop-filter: blur(10px);
         width: 100%;
         text-align: center;
-        transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-        padding: 30px 0;
-        z-index: 999;
-        border-top: 1px solid rgba(0, 0, 0, 0.05);
-    }
-    
-    .nav-menu.active {
-        right: 0;
-    }
-    
-    .nav-menu li {
-        margin: 12px 0;
-    }
-    
-    .btn-nav {
-        margin: 15px 0 0 0;
-    }
-    
-    .menu-toggle {
-        display: block;
-    }
-    
-    .hero {
-        padding: 150px 0 80px;
-    }
-    
-    .hero-title {
-        font-size: 2.4rem;
-    }
-    
-    .hero-subtitle {
-        font-size: 1.1rem;
-    }
-    
-    .section-title {
-        font-size: 2.2rem;
-    }
-    
-    .section-subtitle {
-        font-size: 1.05rem;
-    }
-    
-    .services, .why-us, .about, .contact {
-        padding: 80px 0;
-    }
-    
-    .footer-content {
-        flex-direction: column;
-        gap: 40px;
-        text-align: center;
-    }
-    
-    .footer-links h3:after, .footer-contact h3:after {
-        left: 50%;
-        transform: translateX(-50%);
-    }
-    
-    .social-links {
-        justify-content: center;
-    }
-    
-    .contact-form-container {
-        padding: 35px 25px;
-    }
-    
-    .benefit-icon, .service-icon {
-        width: 70px;
-        height: 70px;
-    }
-    
-    .benefit-icon i, .service-icon i {
-        font-size: 1.8rem;
-    }
-}
-
-@media (max-width: 576px) {
-    .container {
-        padding: 0 15px;
-    }
-    
-    .hero-title {
-        font-size: 2rem;
-        line-height: 1.3;
-    }
-    
-    .hero-subtitle {
-        font-size: 1rem;
-    }
-    
-    .hero-buttons {
-        flex-direction: column;
-        gap: 15px;
-    }
-    
-    .btn-large {
-        padding: 14px 30px;
-        font-size: 1rem;
-        width: 100%;
-    }
-    
-    .section-title {
-        font-size: 1.9rem;
-    }
-    
-    .section-subtitle {
-        font-size: 1rem;
-        margin-bottom: 2.5rem;
-    }
-    
-    .services-grid, .benefits-grid {
-        grid-template-columns: 1fr;
-        gap: 25px;
-    }
-    
-    .service-card, .benefit {
-        padding: 30px 20px;
-    }
-    
-    .stat {
-        min-width: 100%;
-    }
-    
-    .stat-number {
-        font-size: 2.3rem;
-    }
-    
-    .image-placeholder {
-        height: 280px;
-    }
-    
-    .image-placeholder i {
-        font-size: 4rem;
-    }
-    
-    .image-placeholder i:nth-child(1) {
-        font-size: 2.8rem;
-        top: 30px;
-        left: 30px;
-    }
-    
-    .image-placeholder i:nth-child(2) {
-        font-size: 2.3rem;
-        bottom: 30px;
-        right: 30px;
-    }
-    
-    .about-image .image-placeholder {
-        height: 320px;
-    }
-    
-    .about-image .image-placeholder i:nth-child(1) {
-        font-size: 3rem;
-        top: 40px;
-        right: 40px;
-    }
-    
-    .about-image .image-placeholder i:nth-child(2) {
-        font-size: 2.5rem;
-        bottom: 70px;
-        left: 40px;
-    }
-    
-    .about-image .image-placeholder i:nth-child(3) {
-        font-size: 2.2rem;
-        bottom: 40px;
-        right: 70px;
-    }
-    
-    .contact-info, .contact-form-container {
-        min-width: 100%;
-    }
-    
-    .contact-form-container {
-        padding: 25px 20px;
-    }
-}
-
-/* Focus styles pour accessibilité */
-:focus {
-    outline: 3px solid var(--primary-color);
-    outline-offset: 3px;
-}
-
-:focus:not(:focus-visible) {
-    outline: none;
-}
-
-/* Animation de chargement des sections */
-section {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-/* Pour les animations réduites */
-@media (prefers-reduced-motion: reduce) {
-    *,
-    *::before,
-    *::after {
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
-    }
-}
-
-/* Améliorations d'accessibilité */
-@media (hover: hover) {
-    .btn:hover, .nav-link:hover, .service-card:hover, 
-    .benefit:hover, .stat:hover, .contact-item:hover,
-    .social-links a:hover {
-        transform: translateY(-3px);
-    }
-
-}
+        transition: 0.4s cubic-bezier(0.4, 0,
