@@ -313,11 +313,33 @@ ul {
     align-items: center;
 }
 
+/* Styles pour le logo image */
+.logo-img {
+    height: 40px; /* Ajustez selon votre logo */
+    width: auto;
+    transition: var(--transition);
+}
+
+.logo-img:hover {
+    transform: scale(1.05);
+}
+
+/* Optionnel : si vous voulez garder le texte en fallback */
 .logo h1 {
-    font-size: 1.9rem;
-    font-weight: 700;
-    color: var(--dark-color);
-    letter-spacing: -0.5px;
+    display: none; /* Cache le texte si vous avez une image */
+}
+
+/* Responsive pour mobile */
+@media (max-width: 768px) {
+    .logo-img {
+        height: 35px;
+    }
+}
+
+@media (max-width: 576px) {
+    .logo-img {
+        height: 30px;
+    }
 }
 
 .logo-highlight {
@@ -1450,4 +1472,5 @@ section {
     .social-links a:hover {
         transform: translateY(-3px);
     }
+
 }
